@@ -10,7 +10,7 @@ import java.util.List;
 
 @Repository
 public interface IFormation extends JpaRepository<Formation, Integer> {
-    @Query("select paramettre from Formation paramettre where paramettre.id=:id")
+    @Query("select formationData from Formation formationData where formationData.id=:id") // recuperation de la liste des formations dans la BD
     public List<Formation> getAllFormationById(@Param("id") int id);
 
 }

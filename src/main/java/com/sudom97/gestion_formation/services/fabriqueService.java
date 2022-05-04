@@ -28,7 +28,7 @@ public class fabriqueService {
    }
     @RequestMapping(value = "/fabrique/{id}/formation", method = RequestMethod.GET)
     public List<Fabrique> getAllFabriqueFormationById(@PathVariable int id){
-        return fabriquedao.getAllFabriqueById(id);
+        return fabriquedao.getAllFabriqueFormationById(id);
     }
 
    // insertion d'une nouvelle fabrique

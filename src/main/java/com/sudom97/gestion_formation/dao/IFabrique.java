@@ -12,10 +12,10 @@ import java.util.List;
 @Repository
 public interface IFabrique extends JpaRepository<Fabrique, Integer> {
 
-    @Query("select paramettre from Fabrique paramettre where paramettre.id=:id")
+    @Query("select fabriqueData from Fabrique fabriqueData where fabriqueData.id=:id") // recuperation de la liste de fabrique dans la base de donnee
     public List<Fabrique> getAllFabriqueById(@Param("id") int id);
 
-    @Query("select i from Fabrique i join Formation e where e.id = :id")
+    @Query("select i from Formation i join Fabrique e where e.id = :id")
     public List<Fabrique> getAllFabriqueFormationById(@Param("id") int id);
 
 }

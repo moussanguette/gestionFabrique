@@ -28,11 +28,6 @@ public class Formation {
     //private Data date;
 
 
-    @ManyToMany
-    @JoinTable(name = "FabriqueFormation",
-            joinColumns = @JoinColumn(name = "fabrique_id"),
-            inverseJoinColumns = @JoinColumn(name = "formation_id"))
-    private List<Formation> Fabrique = new ArrayList<>();
 
 
 }

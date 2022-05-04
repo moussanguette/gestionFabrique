@@ -6,6 +6,8 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Data
@@ -24,6 +26,10 @@ public class Fabrique {
     private int nbreSalle ;
     private boolean ouverte ;
 
-    //@ManyToMany
-   // private List<Fabrique> enfants = new ArrayList<>();
+    @ManyToMany
+    @JoinTable(name = "FabriqueFormation",
+            joinColumns = @JoinColumn(name = "fabrique_id", referencedColumnName = "id"),
+            inverseJoinColumns = @JoinColumn(name = "formation_id", referencedColumnName = "id"))
+    private List<Formation> Formation = new ArrayList<>();
+
 }
